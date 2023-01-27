@@ -17,20 +17,20 @@ path = "src/lib.rs"
 crate-type = ["staticlib"]
 
 [dependencies]
-algebra = { features = ["tweedle"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "development" }
-primitives = { features = ["tweedle", "merkle_tree"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "development" }
-cctp_primitives = { git = "https://github.com/HorizenOfficial/zendoo-cctp-lib.git", branch = "dev" }
-proof-systems = { features = ["darlin"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "development", optional = true }
-r1cs-crypto = { features = ["tweedle"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "development", optional = true }
-r1cs-core = { git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "development", optional = true}
-r1cs-std = { features = ["tweedle"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "development", optional = true}
-crossbeam-utils = "=0.8.7"
-maybe-uninit = "=2.0.0"
+algebra = { features = ["tweedle"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "remove_fixed_dependencies_from_cargo_toml" }
+primitives = { features = ["tweedle", "merkle_tree"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "remove_fixed_dependencies_from_cargo_toml" }
+cctp_primitives = { git = "https://github.com/HorizenOfficial/zendoo-cctp-lib.git", branch = "remove_cargo_lock" }
+proof-systems = { features = ["darlin"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "remove_fixed_dependencies_from_cargo_toml", optional = true }
+r1cs-crypto = { features = ["tweedle"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "remove_fixed_dependencies_from_cargo_toml", optional = true }
+r1cs-core = { git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "remove_fixed_dependencies_from_cargo_toml", optional = true}
+r1cs-std = { features = ["tweedle"], git = "https://github.com/HorizenOfficial/ginger-lib.git", branch = "remove_fixed_dependencies_from_cargo_toml", optional = true}
+crossbeam-utils = "0.8.7"
+maybe-uninit = "2.0.0"
 rand = "0.8.4"
 winapi = "0.3.9"
-lazy_static = "=1.4.0"
-libc = "=0.2.97"
-cfg-if = "=1.0.0"
+lazy_static = "1.4.0"
+libc = "0.2.97"
+cfg-if = "1.0.0"
 rayon = {version = "1" }
 
 [features]
@@ -72,9 +72,3 @@ debug = true
 #
 #[patch.'https://github.com/HorizenOfficial/zendoo-cctp-lib.git']
 #cctp_primitives = { path = '../zendoo-cctp-lib/cctp_primitives' }
-#
-#[patch.'https://github.com/HorizenLabs/marlin']
-#marlin = { path = '../marlin' }
-#
-#[patch.'https://github.com/HorizenLabs/poly-commit']
-#poly-commit = { path = '../poly-commit' }
